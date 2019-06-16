@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script>
+      if (annyang) {
+        // Let's define a command.
+        var commands = {
+          'google': function() {window.location.href = "https://www.google.com"},
+          'goodbye': function() { alert('See you later!'); },
+          'login': function(){window.location.href = "./yes"}
+        };
+        // This should be true
+        console.log(annyang.isListening())
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+        // Start listening.
+        annyang.start();
+        annyang.addCallback('soundstart', function() {
+          console.log('sound detected');
+        });
+      }
+     </script>
+</head>
+<body>
+    kjaskan
+</body>
+</html>

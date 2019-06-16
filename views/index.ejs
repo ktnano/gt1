@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <title>Annyang</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script>
+      if (annyang) {
+        // Let's define a command.
+        var commands = {
+          'notes': function() {window.location.href = "./main"},
+          'goodbye': function() { alert('See you later!'); },
+          'login': function(){window.location.href = "./login"}
+        };
+        // This should be true
+        console.log(annyang.isListening())
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+        // Start listening.
+        annyang.start();
+        annyang.addCallback('soundstart', function() {
+          console.log('sound detected');
+        });
+      }
+     </script>
+   </head>
+   <body>
+     <h1>Say Login</h1>
+   </body>
+ </html> 
